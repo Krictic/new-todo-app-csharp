@@ -62,7 +62,7 @@ public static class InputHandler
 
     private static string InputValidator()
     {
-        var input = Console.ReadLine() ?? throw new ArgumentNullException("Console.ReadLine('Input > ')");
+        var input = Console.ReadLine() ?? throw new ArgumentNullException(string.Format("Console.ReadLine('Input > '{0})", "ARG0"));
         return input;
     }
     
@@ -71,7 +71,7 @@ public static class InputHandler
         TodoManager.DisplayAllTodos();
     }
 
-    public static void InputHandlerMainMenu()
+    public static bool InputHandlerMainMenu()
     {
         var input = Console.ReadLine() ?? throw new InvalidOperationException();
         switch (input)
@@ -98,11 +98,12 @@ public static class InputHandler
                 InputHandlerDisplayAllTodos();
                 break;
             case "-1":
-                Environment.Exit(0);
-                break;
+                return false;
             default:
                 Console.WriteLine("Invalid Input!");
                 break;
         }
+
+        return true;
     }
 }

@@ -15,3 +15,4 @@ C:\Users\pedro\RiderProjects\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntime
 C:\Users\pedro\RiderProjects\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
 C:\Users\pedro\RiderProjects\ConsoleApp1\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\pedro\RiderProjects\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CopyComplete
+C:\Users\pedro\RiderProjects\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json
