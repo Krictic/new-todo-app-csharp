@@ -58,6 +58,23 @@ namespace TerminalTodoApp.Logic
             else
                 UserPromptMethods.GoBackWithoutAlterations();
         }
+        
+        private static void InputHandlerUpdatePriority()
+        {
+            UserPromptMethods.TodoPrompts("change priority number");
+            var todoId = InputValidationAndParsingMethods.InputParseToInt();
+            var todo   = TodoManager.FindTodoById(todoId);
+            if (todo == null)
+            {
+                UserPromptMethods.NoIdFoundWarning();
+            }
+
+            Debug.Assert(todo != null, nameof(todo) + " != null");
+            UserPromptMethods.AskForPriorityUpdate(todo);
+            var newPriority = InputValidationAndParsingMethods.InputParseToInt();
+            TodoManager.UpdateTodoPriority(todo, newPriority);
+
+        }
 
         private static void InputHandlerDataSave()
         {
@@ -80,43 +97,46 @@ namespace TerminalTodoApp.Logic
         }
 
         public static bool InputHandlerMainMenu()
-        {
-            UserPromptMethods.MainMenuPrompting();
-            var input = Console.ReadLine() ?? throw new InvalidOperationException();
-            switch (input)
-            {
-                case "1":
-                    InputHandlerTodoCreation();
-                    break;
-                case "32":
-                    InputHandlerTodoRemover();
-                    break;
-                case "3":
-                    InputHandlerTodoNameUpdater();
-                    break;
-                case "4":
-                    InputHandlerTodoStatusUpdater();
-                    break;
-                case "5":
-                    InputHandlerDataSave();
-                    break;
-                case "6":
-                    InputHandlerDataLoad();
-                    break;
-                case "7":
-                    InputHandlerClearJsonData();
-                    break;
-                case "8":
-                    InputHandlerDisplayAllTodos();
-                    break;
-                case "-1":
-                    return false;
-                default:
-                    Console.WriteLine("Invalid Input!");
-                    break;
-            }
-
-            return true;
-        }
+         {
+             UserPromptMethods.MainMenuPrompting();
+             var input = Console.ReadLine() ?? throw new InvalidOperationException();
+             switch (input)
+             {
+                 case "1":
+                     InputHandlerTodoCreation();
+                     break;
+                 case "2":
+                     InputHandlerTodoRemover();
+                     break;
+                 case "3":
+                     InputHandlerTodoNameUpdater();
+                     break;
+                 case "4":
+                     InputHandlerTodoStatusUpdater();
+                     break;
+                 case "5":
+                     InputHandlerUpdatePriority();
+                     break;
+                 case "6":
+                     InputHandlerDataSave();
+                     break;
+                 case "7":
+                     InputHandlerDataLoad();
+                     break;
+                 case "8":
+                     InputHandlerClearJsonData();
+                     break;
+                 case "9":
+                     InputHandlerDisplayAllTodos();
+                     break;
+                 case "-1":
+                     return false;
+                 default:
+                     Console.WriteLine("Invalid Input!");
+                     break;
+             }
+         
+             return true;
+         }
     }
 }

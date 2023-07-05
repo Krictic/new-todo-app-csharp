@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 using TerminalTodoApp.Domain;
+using TerminalTodoApp.Logic;
 
 namespace TerminalTodoApp.Display;
 
@@ -74,6 +75,20 @@ public static class UserPromptMethods
         
         Console.WriteLine("Warning: Input cannot be null.\n" +
                           "Press any key to confirm");
+        Console.ReadKey();
+    }
+
+    public static void AskForPriorityUpdate(Todo todo)
+    {
+        Console.WriteLine($"The current priority for this Todo is {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
+                          $"To which priority number you wish it changed to?\n" +
+                          $"{StringBuilders.PriorityDefinitions()}");
+    }
+
+    public static void DisplayNewPriority(Todo todo)
+    {
+        Console.WriteLine($"The Priority number of {todo.Name} is now {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
+                          $"Press any key to confirm...");
         Console.ReadKey();
     }
 }

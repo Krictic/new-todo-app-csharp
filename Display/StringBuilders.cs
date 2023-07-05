@@ -22,16 +22,17 @@ public static class StringBuilders
     {
         var sb = new StringBuilder();
         sb.AppendLine("============= TodoApp =============")
-                     .AppendLine("|| 1. Create New Todo            ||")
-                     .AppendLine("|| 2. Remove Todo From TodoList  ||")
-                     .AppendLine("|| 3. Update Todo Name           ||")
-                     .AppendLine("|| 4. Update Todo Status         ||")
-                     .AppendLine("|| 5. Save Todo Data             ||")
-                     .AppendLine("|| 6. Load Todo Data             ||")
-                     .AppendLine("|| 7. Clear Todo Data            ||")
-                     .AppendLine("|| 8. Display Todo List          ||")
-                     .AppendLine("|| -1. Exit                      ||");
-
+          .AppendLine("|| 1. Create New Todo            ||")
+          .AppendLine("|| 2. Remove Todo From TodoList  ||")
+          .AppendLine("|| 3. Update Todo Name           ||")
+          .AppendLine("|| 4. Update Todo Status         ||")
+          .AppendLine("|| 5. Update Todo Priority       ||")
+          .AppendLine("|| 6. Save Todo Data             ||")
+          .AppendLine("|| 7. Load Todo Data             ||")
+          .AppendLine("|| 8. Clear Todo Data            ||")
+          .AppendLine("|| 9. Display Todo List          ||")
+          .AppendLine("|| -1. Exit                      ||");
+    
         return sb;
     }
 }

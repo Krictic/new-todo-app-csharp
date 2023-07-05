@@ -15,7 +15,7 @@ public static class DisplayTodoMethods
             $"=========================================================\nTodo   : {todo.Name}\nId     : {todo.TodoId}\nStatus : {(todo.IsCompleted ? "Complete" : "Incomplete")}\nTodo Priority     : {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)})";
     }
 
-    private static string TodoPriorityInterpretation(Todo todo)
+    public static string TodoPriorityInterpretation(Todo todo)
     {
         switch (todo.TodoPriority)
         {

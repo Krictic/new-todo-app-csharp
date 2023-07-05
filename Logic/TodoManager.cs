@@ -85,4 +85,10 @@ public static class TodoManager
         JsonHandler.ClearJsonData();
         Todo._todoCount = 0;
     }
+
+    public static void UpdateTodoPriority(Todo todo, int newPriority)
+    {
+        todo.TodoPriority = newPriority;
+        UserPromptMethods.DisplayNewPriority(todo);
+    }
 }
