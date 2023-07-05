@@ -48,16 +48,16 @@ public static class JsonHandler
 
     public static void Save(List<Todo> todoList)
     {
-        using var file = File.CreateText(JsonPath);
-        var serializer = new JsonSerializer();
+        using var file       = File.CreateText(JsonPath);
+        var       serializer = new JsonSerializer();
         serializer.Serialize(file, todoList);
     }
 
     public static List<Todo> Load()
     {
-        using var file = File.OpenText(JsonPath);
-        var serializer = new JsonSerializer();
-        var todos = (List<Todo>)serializer.Deserialize(file, typeof(List<Todo>))!;
+        using var file       = File.OpenText(JsonPath);
+        var       serializer = new JsonSerializer();
+        var       todos      = (List<Todo>)serializer.Deserialize(file, typeof(List<Todo>))!;
         return todos;
     }
 

@@ -8,7 +8,7 @@ public static class MainMenu
     public static void DisplayMainMenu()
     {
         var stringBuilder = new StringBuilder();
-        bool keepRendering = true;
+        var keepRendering = true;
         stringBuilder.AppendLine("============= TodoApp =============")
                      .AppendLine("|| 1. Create New Todo            ||")
                      .AppendLine("|| 2. Remove Todo From TodoList  ||")

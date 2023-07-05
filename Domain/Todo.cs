@@ -6,13 +6,13 @@ public class Todo
 
     public Todo(string name)
     {
-        Name = name;
+        Name        = name;
         IsCompleted = false;
-        TodoId = _todoCount;
+        TodoId      = _todoCount;
         _todoCount++;
     }
 
-    public string Name { get; set; }
-    public int TodoId { get; set; }
-    public bool IsCompleted { get; set; }
+    public string Name        { get; set; }
+    public int    TodoId      { get; set; }
+    public bool   IsCompleted { get; set; }
 }
