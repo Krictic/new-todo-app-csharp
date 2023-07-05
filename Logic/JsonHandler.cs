@@ -5,7 +5,7 @@ namespace TerminalTodoApp.Logic;
 
 public static class JsonHandler
 {
-    private static readonly string JsonPath = "./Data/TodoData.json";
+    private const string JsonPath = "./Data/TodoData.json";
 
     public static void VerifyJsonData()
     {
@@ -57,8 +57,8 @@ public static class JsonHandler
     {
         using var file       = File.OpenText(JsonPath);
         var       serializer = new JsonSerializer();
-        var       todos      = (List<Todo>)serializer.Deserialize(file, typeof(List<Todo>))!;
-        return todos;
+        var       todoList   = (List<Todo>)serializer.Deserialize(file, typeof(List<Todo>))!;
+        return todoList;
     }
 
     public static void ClearJsonData()

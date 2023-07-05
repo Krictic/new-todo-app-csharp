@@ -1,4 +1,5 @@
-﻿using TerminalTodoApp.Domain;
+﻿using TerminalTodoApp.Display;
+using TerminalTodoApp.Domain;
 
 namespace TerminalTodoApp.Logic;
 
@@ -12,12 +13,12 @@ public static class TodoManager
         AddToList(todo);
     }
 
-    public static void UpdateTodoName(Todo todo, string newName)
+    public static void UpdateTodoName(Todo? todo, string newName)
     {
         todo.Name = newName;
     }
 
-    public static void ToggleTodoCompletionStatus(Todo todo)
+    public static void ToggleTodoCompletionStatus(Todo? todo)
     {
         todo.IsCompleted = !todo.IsCompleted;
     }
@@ -45,22 +46,19 @@ public static class TodoManager
 
     public static void DisplayAllTodos()
     {
-        foreach (var todo in _todoList)
+        if (_todoList.Count != 0)
         {
-            DisplayTodo(todo);
-            Console.ReadKey();
+            foreach (var todo in _todoList)
+            {
+                DisplayTodoMethods.DisplayTodo(todo);
+                Console.ReadKey();
+            }
         }
-    }
-
-    private static void DisplayTodo(Todo todo)
-    {
-        Console.WriteLine(FormatTodo(todo));
-    }
-
-    private static string FormatTodo(Todo todo)
-    {
-        return
-            $"=========================================================\nTodo   : {todo.Name}\nId     : {todo.TodoId}\nStatus : {(todo.IsCompleted ? "Complete" : "Incomplete")}";
+        else
+        {
+            UserPromptMethods.EmptyListWarning();
+        }
+        
     }
 
     public static void SaveJsonData()

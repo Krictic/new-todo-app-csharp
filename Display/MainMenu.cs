@@ -21,8 +21,10 @@ public static class MainMenu
                      .AppendLine("|| -1. Exit                      ||");
         while (keepRendering)
         {
+            //Console.Clear();
             Console.WriteLine(stringBuilder);
             keepRendering = InputHandler.InputHandlerMainMenu();
+            //Thread.Sleep(500);
         }
     }
 }
