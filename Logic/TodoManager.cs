@@ -8,13 +8,13 @@ public static class TodoManager
 {
     private static List<Todo> _todoList = new();
 
-    public static void CreateTodo(string todoName, int todoPriority = 0)
+    public static void CreateTodo(string? todoName, int todoPriority = 0)
     {
         var todo = new Todo(todoName, todoPriority);
         AddToList(todo);
     }
 
-    public static void UpdateTodoName(Todo? todo, string newName)
+    public static void UpdateTodoName(Todo? todo, string? newName)
     {
         Debug.Assert(todo != null, nameof(todo) + " != null");
         todo.Name = newName;
@@ -51,11 +51,13 @@ public static class TodoManager
     {
         if (_todoList.Count != 0)
         {
+            Console.Clear();
             foreach (var todo in _todoList)
             {
                 DisplayTodoMethods.DisplayTodo(todo);
                 Console.ReadKey();
             }
+            Console.Clear();
         }
         else
         {
@@ -81,5 +83,6 @@ public static class TodoManager
     {
         _todoList.Clear();
         JsonHandler.ClearJsonData();
+        Todo._todoCount = 0;
     }
 }

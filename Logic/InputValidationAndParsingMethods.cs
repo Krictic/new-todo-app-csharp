@@ -5,25 +5,20 @@ namespace TerminalTodoApp.Logic;
 
 public static class InputValidationAndParsingMethods
 {
-    private static string ReadFromConsole()
+    private static string? ReadAndValidateFromConsole()
     {
         var input = Console.ReadLine();
-        Debug.Assert(input != null, nameof(input) + " != null");
-        return input;
-    }
-
-    private static void ValidateInput(string input)
-    {
-        if (input == null)
+        if (!string.IsNullOrWhiteSpace(input)) return input;
+        else
         {
-            throw new ArgumentNullException(nameof(input), "Empty input is not allowed");
+            UserPromptMethods.NullInputWarning();
+            return null;
         }
     }
 
-    public static string GetValidatedStringInput()
+    public static string? GetValidatedStringInput()
     {
-        var input = ReadFromConsole();
-        ValidateInput(input);
+        var input = ReadAndValidateFromConsole();
         return input;
     }
 

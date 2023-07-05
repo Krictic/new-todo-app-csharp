@@ -1,1 +1,1 @@
-[{"Name":"pop","TodoId":0,"IsCompleted":false},{"Name":"pop2","TodoId":1,"IsCompleted":false},{"Name":"pop3","TodoId":2,"IsCompleted":false},{"Name":"yausy","TodoId":3,"IsCompleted":false},{"Name":"pop5","TodoId":4,"IsCompleted":false},{"Name":"pop6","TodoId":5,"IsCompleted":false}]
+[{"Name":"pop0","TodoId":0,"IsCompleted":false,"TodoPriority":0},{"Name":"pop1","TodoId":1,"IsCompleted":false,"TodoPriority":1},{"Name":"pop2","TodoId":2,"IsCompleted":false,"TodoPriority":2},{"Name":"pop3","TodoId":3,"IsCompleted":false,"TodoPriority":3}]

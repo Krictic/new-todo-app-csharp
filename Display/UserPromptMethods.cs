@@ -35,7 +35,7 @@ public static class UserPromptMethods
         Console.Write("What is the new name of your todo? \n");
     }
 
-    public static int InputParsingPrompt(string input)
+    public static int InputParsingPrompt(string? input)
     {
         Console.WriteLine(int.TryParse(input, out var requestTodoId)
                               ? $"Todo with id {requestTodoId}."
@@ -59,26 +59,21 @@ public static class UserPromptMethods
 
     public static void MainMenuPrompting()
     {
-        Console.WriteLine("Select a valid menu option by its number.");
+        Console.Write("Select a valid menu option by its number\n" +
+                      "Input > ");
     }
 
     public static void AskForPriority()
     {
         Console.WriteLine("Input a number form 0 to 5, to define the Todo Priority number. See Below for definitions.");
-        Console.WriteLine(value: PriorityDefinitions());
+        Console.WriteLine(value: StringBuilders.PriorityDefinitions());
     }
 
-    private static string PriorityDefinitions()
+    public static void NullInputWarning()
     {
-        StringBuilder sb = new StringBuilder();
-
-        sb.AppendLine("0 - Most Urgent (Immediate action required)");
-        sb.AppendLine("1 - High Priority (Action required soon)");
-        sb.AppendLine("2 - Medium Priority (Needs attention)");
-        sb.AppendLine("3 - Low Priority (Can be deferred)");
-        sb.AppendLine("4 - Least Urgent (Completely optional)");
-        sb.AppendLine("5 - No Urgency (Indefinitely optional)");
-
-        return sb.ToString();
+        
+        Console.WriteLine("Warning: Input cannot be null.\n" +
+                          "Press any key to confirm");
+        Console.ReadKey();
     }
 }

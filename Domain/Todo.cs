@@ -2,9 +2,9 @@
 
 public class Todo
 {
-    private static int _todoCount;
+    public static int _todoCount;
 
-    public Todo(string name, int todoPriority)
+    public Todo(string? name, int todoPriority)
     {
         Name         = name;
         IsCompleted  = false;
@@ -13,7 +13,7 @@ public class Todo
         _todoCount++;
     }
 
-    public string Name         { get; set; }
+    public string? Name         { get; set; }
     public int    TodoId       { get; set; }
     public bool   IsCompleted  { get; set; }
     public int    TodoPriority { get; set; }

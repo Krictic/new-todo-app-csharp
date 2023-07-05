@@ -1,4 +1,5 @@
-﻿using TerminalTodoApp.Display;
+﻿using System.Diagnostics;
+using TerminalTodoApp.Display;
 
 namespace TerminalTodoApp.Logic
 {
@@ -49,9 +50,10 @@ namespace TerminalTodoApp.Logic
                 UserPromptMethods.NoIdFoundWarning();
             }
 
+            Debug.Assert(todo != null, nameof(todo) + " != null");
             UserPromptMethods.AskForStatusUpdate(todo);
             var input = InputValidationAndParsingMethods.GetValidatedStringInput();
-            if (input.ToLowerInvariant() == "y")
+            if (input?.ToLowerInvariant() == "y")
                 TodoManager.ToggleTodoCompletionStatus(todo);
             else
                 UserPromptMethods.GoBackWithoutAlterations();
