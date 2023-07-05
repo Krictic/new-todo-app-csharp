@@ -1,4 +1,5 @@
-﻿using TerminalTodoApp.Display;
+﻿using System.Diagnostics;
+using TerminalTodoApp.Display;
 using TerminalTodoApp.Domain;
 
 namespace TerminalTodoApp.Logic;
@@ -7,23 +8,25 @@ public static class TodoManager
 {
     private static List<Todo> _todoList = new();
 
-    public static void CreateTodo(string name)
+    public static void CreateTodo(string todoName, int todoPriority = 0)
     {
-        var todo = new Todo(name);
+        var todo = new Todo(todoName, todoPriority);
         AddToList(todo);
     }
 
     public static void UpdateTodoName(Todo? todo, string newName)
     {
+        Debug.Assert(todo != null, nameof(todo) + " != null");
         todo.Name = newName;
     }
 
     public static void ToggleTodoCompletionStatus(Todo? todo)
     {
+        Debug.Assert(todo != null, nameof(todo) + " != null");
         todo.IsCompleted = !todo.IsCompleted;
     }
 
-    public static void AddToList(Todo todo)
+    private static void AddToList(Todo todo)
     {
         if (!_todoList.Contains(todo))
             _todoList.Add(todo);

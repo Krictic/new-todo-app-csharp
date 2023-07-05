@@ -1,4 +1,4 @@
-﻿# TerminalTodoApp
+﻿# Terminal Todo App
 
 ## Introduction
 

@@ -1,4 +1,6 @@
-﻿using TerminalTodoApp.Domain;
+﻿using System.Diagnostics;
+using System.Text;
+using TerminalTodoApp.Domain;
 
 namespace TerminalTodoApp.Display;
 
@@ -41,16 +43,42 @@ public static class UserPromptMethods
         return requestTodoId;
     }
 
-    public static void AskForStatusUpdate(Todo? todo)
+    public static void AskForStatusUpdate(Todo todo)
     {
+        Debug.Assert(todo != null, nameof(todo) + " != null");
         Console.Write(
-            $"Todo of ID {todo.TodoId} has the following status: {todo.IsCompleted}.\n Do you wish to change it to {!todo.IsCompleted} (y/n)?\n");
+            $"Todo of ID {todo.TodoId} has the following status: {todo.IsCompleted}.\n Do you wish to change it to {!todo.IsCompleted} (y/n)? ");
     }
 
     public static void GoBackWithoutAlterations()
     {
-        Console.WriteLine("Ok, we are not changing anything then.\n" +
+        Console.Write("Ok, we are not changing anything then.\n" +
                           "Press any key to go back...");
         Console.ReadKey();
+    }
+
+    public static void MainMenuPrompting()
+    {
+        Console.WriteLine("Select a valid menu option by its number.");
+    }
+
+    public static void AskForPriority()
+    {
+        Console.WriteLine("Input a number form 0 to 5, to define the Todo Priority number. See Below for definitions.");
+        Console.WriteLine(value: PriorityDefinitions());
+    }
+
+    private static string PriorityDefinitions()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.AppendLine("0 - Most Urgent (Immediate action required)");
+        sb.AppendLine("1 - High Priority (Action required soon)");
+        sb.AppendLine("2 - Medium Priority (Needs attention)");
+        sb.AppendLine("3 - Low Priority (Can be deferred)");
+        sb.AppendLine("4 - Least Urgent (Completely optional)");
+        sb.AppendLine("5 - No Urgency (Indefinitely optional)");
+
+        return sb.ToString();
     }
 }

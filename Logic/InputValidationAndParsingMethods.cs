@@ -20,7 +20,7 @@ public static class InputValidationAndParsingMethods
         }
     }
 
-    public static string GetValidatedInput()
+    public static string GetValidatedStringInput()
     {
         var input = ReadFromConsole();
         ValidateInput(input);
@@ -29,7 +29,7 @@ public static class InputValidationAndParsingMethods
 
     public static int InputParseToInt()
     {
-        var input         = GetValidatedInput();
+        var input         = GetValidatedStringInput();
         var requestTodoId = UserPromptMethods.InputParsingPrompt(input);
         return requestTodoId;
     }

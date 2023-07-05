@@ -7,13 +7,15 @@ namespace TerminalTodoApp.Logic
         private static void InputHandlerTodoCreation()
         {
             UserPromptMethods.AskTodoName();
-            var todoName = InputValidationAndParsingMethods.GetValidatedInput();
-            TodoManager.CreateTodo(todoName);
+            var todoName = InputValidationAndParsingMethods.GetValidatedStringInput();
+            UserPromptMethods.AskForPriority();
+            var todoPriority = InputValidationAndParsingMethods.InputParseToInt();
+            TodoManager.CreateTodo(todoName, todoPriority);
         }
 
         private static void InputHandlerTodoRemover()
         {
-            Console.Write("What is the id of the todo you wish removed? \n");
+            UserPromptMethods.TodoPrompts("remove");
             var todoId = InputValidationAndParsingMethods.InputParseToInt();
             var todo   = TodoManager.FindTodoById(todoId);
             if (todo != null)
@@ -33,7 +35,7 @@ namespace TerminalTodoApp.Logic
             var todoId = InputValidationAndParsingMethods.InputParseToInt();
             var todo   = TodoManager.FindTodoById(todoId);
             UserPromptMethods.AskTodoNewName();
-            var newName = InputValidationAndParsingMethods.GetValidatedInput();
+            var newName = InputValidationAndParsingMethods.GetValidatedStringInput();
             TodoManager.UpdateTodoName(todo, newName);
         }
 
@@ -48,7 +50,7 @@ namespace TerminalTodoApp.Logic
             }
 
             UserPromptMethods.AskForStatusUpdate(todo);
-            var input = InputValidationAndParsingMethods.GetValidatedInput();
+            var input = InputValidationAndParsingMethods.GetValidatedStringInput();
             if (input.ToLowerInvariant() == "y")
                 TodoManager.ToggleTodoCompletionStatus(todo);
             else
@@ -77,6 +79,7 @@ namespace TerminalTodoApp.Logic
 
         public static bool InputHandlerMainMenu()
         {
+            UserPromptMethods.MainMenuPrompting();
             var input = Console.ReadLine() ?? throw new InvalidOperationException();
             switch (input)
             {

@@ -4,15 +4,17 @@ public class Todo
 {
     private static int _todoCount;
 
-    public Todo(string name)
+    public Todo(string name, int todoPriority)
     {
-        Name        = name;
-        IsCompleted = false;
-        TodoId      = _todoCount;
+        Name         = name;
+        IsCompleted  = false;
+        TodoPriority = todoPriority;
+        TodoId       = _todoCount;
         _todoCount++;
     }
 
-    public string Name        { get; set; }
-    public int    TodoId      { get; set; }
-    public bool   IsCompleted { get; set; }
+    public string Name         { get; set; }
+    public int    TodoId       { get; set; }
+    public bool   IsCompleted  { get; set; }
+    public int    TodoPriority { get; set; }
 }
