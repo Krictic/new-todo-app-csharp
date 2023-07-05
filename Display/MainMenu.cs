@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using ConsoleApp1.Logic;
+using TerminalTodoApp.Logic;
 
-namespace ConsoleApp1.Display;
+namespace TerminalTodoApp.Display;
 
 public static class MainMenu
 {

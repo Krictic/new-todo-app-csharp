@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Domain;
+﻿namespace TerminalTodoApp.Domain;
 
 public class Todo
 {

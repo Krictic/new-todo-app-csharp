@@ -1,6 +1,6 @@
-﻿using ConsoleApp1.Domain;
+﻿using TerminalTodoApp.Domain;
 
-namespace ConsoleApp1.Logic
+namespace TerminalTodoApp.Logic
 {
     public static class TodoManager
     {
@@ -78,7 +78,9 @@ namespace ConsoleApp1.Logic
         public static void LoadJsonData()
         {
             _todoList = JsonHandler.Load();
-            Console.WriteLine("Saved Todo Data successfully loaded.");
+            Console.WriteLine("Saved Todo Data successfully loaded.\n" +
+                              "Press any button to continue...");
+            Console.ReadKey();
         }
 
         public static void ClearTodoList()

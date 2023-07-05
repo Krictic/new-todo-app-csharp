@@ -1,5 +1,5 @@
-﻿using ConsoleApp1.Display;
-using ConsoleApp1.Logic;
+﻿using TerminalTodoApp.Display;
+using TerminalTodoApp.Logic;
 
 JsonHandler.VerifyJsonData();
 MainMenu.DisplayMainMenu();

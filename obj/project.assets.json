@@ -62,11 +62,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro\\RiderProjects\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\pedro\\RiderProjects\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\pedro\\RiderProjects\\Terminal-Todo-App\\Terminal-Todo-App.csproj",
+      "projectName": "Terminal-Todo-App",
+      "projectPath": "C:\\Users\\pedro\\RiderProjects\\Terminal-Todo-App\\Terminal-Todo-App.csproj",
       "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro\\RiderProjects\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\pedro\\RiderProjects\\Terminal-Todo-App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\pedro\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",

@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Logic;
+﻿namespace TerminalTodoApp.Logic;
 
 public static class InputHandler
 {

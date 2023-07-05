@@ -1,7 +1,7 @@
-﻿using ConsoleApp1.Domain;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using TerminalTodoApp.Domain;
 
-namespace ConsoleApp1.Logic;
+namespace TerminalTodoApp.Logic;
 
 public static class JsonHandler
 {
@@ -28,7 +28,6 @@ public static class JsonHandler
             Console.WriteLine("Existing Todo Data found.\n");
             Console.WriteLine("Press any key to load Todo Data.");
             Console.ReadKey();
-            Console.WriteLine("Loading Todo Data...");
             TodoManager.LoadJsonData();
         }
         else
