@@ -21,7 +21,7 @@ public static class InputHandler
             $"Todo of ID {todo.TodoId} has the following status: {todo.IsCompleted}.\n Do you wish to change it to {!todo.IsCompleted} (y/n)?\n");
         var input = InputValidator();
         if (input.ToLowerInvariant() == "y")
-            TodoManager.UpdateTodoCompletion(todo);
+            TodoManager.ToggleTodoCompletionStatus(todo);
         else
             Console.WriteLine("Ok, going back now.");
     }
@@ -95,6 +95,9 @@ public static class InputHandler
                 InputHandlerDataLoad();
                 break;
             case "7":
+                InputHandlerClearJsonData();
+                break;
+            case "8":
                 InputHandlerDisplayAllTodos();
                 break;
             case "-1":
@@ -105,5 +108,10 @@ public static class InputHandler
         }
 
         return true;
+    }
+
+    private static void InputHandlerClearJsonData()
+    {
+        TodoManager.ClearTodoList();
     }
 }

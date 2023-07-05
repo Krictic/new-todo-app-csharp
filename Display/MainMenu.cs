@@ -16,7 +16,8 @@ public static class MainMenu
                      .AppendLine("|| 4. Update Todo Status         ||")
                      .AppendLine("|| 5. Save Todo Data             ||")
                      .AppendLine("|| 6. Load Todo Data             ||")
-                     .AppendLine("|| 7. Display Todo List          ||")
+                     .AppendLine("|| 7. Clear Todo Data            ||")
+                     .AppendLine("|| 8. Display Todo List          ||")
                      .AppendLine("|| -1. Exit                      ||");
         while (keepRendering)
         {
