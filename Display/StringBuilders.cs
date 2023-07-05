@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using TerminalTodoApp;
 
 namespace TerminalTodoApp.Display;
 
@@ -32,7 +33,7 @@ public static class StringBuilders
           .AppendLine("|| 8. Clear Todo Data            ||")
           .AppendLine("|| 9. Display Todo List          ||")
           .AppendLine("|| -1. Exit                      ||");
-    
+
         return sb;
     }
 }

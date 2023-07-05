@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using TerminalTodoApp.Display;
 using TerminalTodoApp.Domain;
+using TerminalTodoApp;
 
 namespace TerminalTodoApp.Logic;
 
@@ -57,13 +58,13 @@ public static class TodoManager
                 DisplayTodoMethods.DisplayTodo(todo);
                 Console.ReadKey();
             }
+
             Console.Clear();
         }
         else
         {
             UserPromptMethods.EmptyListWarning();
         }
-        
     }
 
     public static void SaveJsonData()

@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using TerminalTodoApp.Display;
+using TerminalTodoApp;
 
 namespace TerminalTodoApp.Logic;
 
@@ -8,7 +9,10 @@ public static class InputValidationAndParsingMethods
     private static string? ReadAndValidateFromConsole()
     {
         var input = Console.ReadLine();
-        if (!string.IsNullOrWhiteSpace(input)) return input;
+        if (!string.IsNullOrWhiteSpace(input))
+        {
+            return input;
+        }
         else
         {
             UserPromptMethods.NullInputWarning();

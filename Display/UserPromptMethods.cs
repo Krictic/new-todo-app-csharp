@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using System.Text;
 using TerminalTodoApp.Domain;
 using TerminalTodoApp.Logic;
+using TerminalTodoApp;
 
 namespace TerminalTodoApp.Display;
 
@@ -54,7 +54,7 @@ public static class UserPromptMethods
     public static void GoBackWithoutAlterations()
     {
         Console.Write("Ok, we are not changing anything then.\n" +
-                          "Press any key to go back...");
+                      "Press any key to go back...");
         Console.ReadKey();
     }
 
@@ -67,12 +67,11 @@ public static class UserPromptMethods
     public static void AskForPriority()
     {
         Console.WriteLine("Input a number form 0 to 5, to define the Todo Priority number. See Below for definitions.");
-        Console.WriteLine(value: StringBuilders.PriorityDefinitions());
+        Console.WriteLine(StringBuilders.PriorityDefinitions());
     }
 
     public static void NullInputWarning()
     {
-        
         Console.WriteLine("Warning: Input cannot be null.\n" +
                           "Press any key to confirm");
         Console.ReadKey();
@@ -80,15 +79,17 @@ public static class UserPromptMethods
 
     public static void AskForPriorityUpdate(Todo todo)
     {
-        Console.WriteLine($"The current priority for this Todo is {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
-                          $"To which priority number you wish it changed to?\n" +
-                          $"{StringBuilders.PriorityDefinitions()}");
+        Console.WriteLine(
+            $"The current priority for this Todo is {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
+            $"To which priority number you wish it changed to?\n" +
+            $"{StringBuilders.PriorityDefinitions()}");
     }
 
     public static void DisplayNewPriority(Todo todo)
     {
-        Console.WriteLine($"The Priority number of {todo.Name} is now {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
-                          $"Press any key to confirm...");
+        Console.WriteLine(
+            $"The Priority number of {todo.Name} is now {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)}\n" +
+            $"Press any key to confirm...");
         Console.ReadKey();
     }
 }

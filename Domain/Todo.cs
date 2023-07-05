@@ -1,5 +1,7 @@
 ﻿namespace TerminalTodoApp.Domain;
 
+using TerminalTodoApp;
+
 public class Todo
 {
     public static int _todoCount;
@@ -14,7 +16,7 @@ public class Todo
     }
 
     public string? Name         { get; set; }
-    public int    TodoId       { get; set; }
-    public bool   IsCompleted  { get; set; }
-    public int    TodoPriority { get; set; }
+    public int     TodoId       { get; set; }
+    public bool    IsCompleted  { get; set; }
+    public int     TodoPriority { get; set; }
 }

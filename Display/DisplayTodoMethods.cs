@@ -1,4 +1,5 @@
 ﻿using TerminalTodoApp.Domain;
+using TerminalTodoApp;
 
 namespace TerminalTodoApp.Logic;
 
@@ -12,7 +13,7 @@ public static class DisplayTodoMethods
     private static string FormatTodo(Todo todo)
     {
         return
-            $"=========================================================\nTodo   : {todo.Name}\nId     : {todo.TodoId}\nStatus : {(todo.IsCompleted ? "Complete" : "Incomplete")}\nTodo Priority     : {todo.TodoPriority} - {DisplayTodoMethods.TodoPriorityInterpretation(todo)})";
+            $"=========================================================\nTodo   : {todo.Name}\nId     : {todo.TodoId}\nStatus : {(todo.IsCompleted ? "Complete" : "Incomplete")}\nTodo Priority     : {todo.TodoPriority} - {TodoPriorityInterpretation(todo)})";
     }
 
     public static string TodoPriorityInterpretation(Todo todo)
